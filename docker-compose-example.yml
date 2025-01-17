@@ -1,0 +1,15 @@
+version: '3.8'
+
+services:
+  volume-manager:
+    build: .
+    environment:
+      - GCS_BUCKET=gs://my-backup-bucket
+    volumes:
+      # Mount Docker socket for accessing volumes dynamically
+      - /var/run/docker.sock:/var/run/docker.sock
+      # Temporary directories for backup/restore
+      - /tmp/backups:/tmp/backups
+      - /tmp/restore:/tmp/restore
+    entrypoint: ["sh", "-c"]
+    command: /usr/local/bin/volume_manager.sh backup "$GCS_BUCKET" # or /usr/local/bin/volume_manager.sh restore "$GCS_BUCKET" 
