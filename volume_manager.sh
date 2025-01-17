@@ -38,9 +38,9 @@ backup_volumes() {
     mkdir -p "$BACKUP_DIR"
 
     # Check if the GCS bucket exists, and create it if not
-    if ! gsutil ls "$gcs_bucket"; then
-        echo "Bucket $bucket_url does not exist. Creating it now..."
-        gsutil mb "$bucket_url"
+    if ! gsutil ls "$bucket_url"; then
+        echo "Bucket $bucket_url does not exist. Please create it manually before running this script."
+        exit 1
     fi
 
     # Loop through all volumes and back them up
