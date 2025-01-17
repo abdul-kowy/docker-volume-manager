@@ -2,7 +2,7 @@
 
 This project provides a tool to dynamically back up and restore Docker volumes to Google Cloud Storage (GCS) via a container in a Docker Compose stack. It is designed to run in an automated, simple, and secure manner while being highly configurable.
 
----
+
 
 ## Features
 
@@ -13,7 +13,7 @@ This project provides a tool to dynamically back up and restore Docker volumes t
 - **Flexible Authentication**: Compatible with GCP key files or Compute Engine service accounts with sufficient roles.
 - **Configuration via Docker Compose**: Easy to integrate into existing workflows.
 
----
+
 
 ## Prerequisites
 
@@ -34,7 +34,7 @@ This project provides a tool to dynamically back up and restore Docker volumes t
 4. **Required Packages**:
   - Commands: `gsutil`, `tar`, and `docker-cli` (included in the image).
 
----
+
 
 ## Project Structure
 
@@ -44,7 +44,7 @@ This project provides a tool to dynamically back up and restore Docker volumes t
 - **`Dockerfile`**: Docker build file to create the volume manager image.
 - **`docker-compose.yml`**: Docker Compose configuration to deploy the container.
 
----
+
 
 ## Installation and Configuration
 
@@ -99,7 +99,7 @@ services:
   docker-compose up --force-recreate
   ```
 
----
+
 
 ## How the Script Works
 
@@ -144,7 +144,7 @@ The script operates in two main steps:
    ```
   - Restart associated containers if needed.
 
----
+
 
 ## Key Points and Security
 
@@ -158,7 +158,7 @@ The script operates in two main steps:
 3. **Data Retention**:
   - The backup files are temporarily stored in `/tmp/backups` and `/tmp/restore`.
 
----
+
 
 ## Complete Usage Example
 
@@ -172,7 +172,7 @@ The script operates in two main steps:
 ./volume_manager.sh restore gs://my-bucket
 ```
 
----
+
 
 ## Future Improvements
 
@@ -180,7 +180,7 @@ The script operates in two main steps:
 2. Support multiple cloud platforms like AWS S3 or Azure Blob Storage.
 3. Integrate automated tests to validate backup and restore operations.
 
----
+
 
 ## Conclusion
 
