@@ -46,11 +46,7 @@ backup_volumes() {
     local bucket_url=$1
     mkdir -p "$BACKUP_DIR"
 
-    # Check if the GCS bucket exists
-    if ! gsutil ls "$bucket_url" &> /dev/null; then
-        echo "Bucket $bucket_url does not exist. Please create it manually before running this script."
-        exit 1
-    fi
+
 
     # Loop through all volumes and back them up
     docker volume ls -q | while read -r volume; do
