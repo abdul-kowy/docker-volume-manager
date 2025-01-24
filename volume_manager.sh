@@ -63,7 +63,7 @@ backup_volumes() {
     done
 
     echo "Backup completed!"
-}
+
 
 # Restore function
 restore_volumes() {
