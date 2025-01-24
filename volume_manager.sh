@@ -120,4 +120,3 @@ case $command in
         exit 1
         ;;
 esac
-
